@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FragmentExersice" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/gold</item>
+        <item name="colorPrimaryDark">@color/gold</item>
+        <item name="colorSurface">#DF9F39</item>
+        <item name="colorOnSurface">#DF9F39</item>
+    </style>
+
+    <style name="Theme.FragmentExersice" parent="Base.Theme.FragmentExersice" />
+</resources>
