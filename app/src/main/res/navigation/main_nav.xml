@@ -24,8 +24,8 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.sample.fragmentexersice.fragment.UserListFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_user_list" />
+        android:name="com.sample.fragmentexersice.fragment.UserPostsFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_user_posts" />
 
 </navigation>

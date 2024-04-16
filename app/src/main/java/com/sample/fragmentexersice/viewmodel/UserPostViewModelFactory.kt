@@ -3,13 +3,12 @@ package com.sample.fragmentexersice.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.sample.fragmentexersice.repository.PostRepository
-import com.sample.fragmentexersice.repository.RegisterRepository
 
-class UserPostViewModelFactory (private val registerRepository: PostRepository): ViewModelProvider.Factory {
+class UserPostViewModelFactory (private val postRepository: PostRepository): ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(RegisterViewModel::class.java)){
-            return UserPostViewModel(registerRepository) as T
+        if (modelClass.isAssignableFrom(UserPostViewModel::class.java)){
+            return UserPostViewModel(postRepository) as T
         }
         throw IllegalArgumentException("Unknown View Model")
     }
