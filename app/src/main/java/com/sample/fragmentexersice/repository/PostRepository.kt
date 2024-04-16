@@ -20,25 +20,22 @@ class PostRepository {
     private var _postList = MutableLiveData<Posts?>()
     var postList: LiveData<Posts?> = _postList
 
-     fun callPostApi() {
+    fun callPostApi() {
+        val call = RetrofitInstance.apiService.getPost()
+        call.enqueue(object : Callback<Posts> {
+            override fun onResponse(p0: Call<Posts>, response: Response<Posts>) {
+                if (response.isSuccessful) {
+                    val post = response.body()
+                    _postList.postValue(post)
+                    Log.e("API Response", post.toString())
+                }
+            }
 
-             val call = RetrofitInstance.apiService.getPost()
-             call.enqueue(object : Callback<Posts> {
-                 override fun onResponse(p0: Call<Posts>, response: Response<Posts>) {
-                     if (response.isSuccessful) {
-                         val post = response.body()
-                         _postList.postValue(post)
-                         Log.e("API Response", post.toString())
-                     }
-                 }
+            override fun onFailure(p0: Call<Posts>, response: Throwable) {
+                Log.e("API Response", response.message!!)
+            }
 
-                 override fun onFailure(p0: Call<Posts>, p1: Throwable) {
-                     TODO("Not yet implemented")
-                 }
-
-             })
-         }
-
-
+        })
+    }
 
 }

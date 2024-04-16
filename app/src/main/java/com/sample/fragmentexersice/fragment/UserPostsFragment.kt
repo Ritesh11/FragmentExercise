@@ -33,7 +33,15 @@ class UserPostsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.userPost.observe(viewLifecycleOwner){
-            Log.e("UserPostsFragment", it.toString())
+           val listItem = it?.listIterator()
+            while (listItem?.hasNext()==true){
+                val item = listItem.next()
+                val result = "Album Title : "+ "${item.title}"+"\n"+
+                        "Album Id : "+"${item.id}"+"\n"+
+                        "User Id : "+"${item.userId}"+"\n\n\n"
+
+                binding.itemPost.append(result)
+            }
         }
         viewModel.hitPostApi()
     }
