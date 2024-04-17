@@ -1,3 +1,3 @@
 package com.sample.fragmentexersice.model
 
-class Posts : ArrayList<PostsItem>()
+class Albums : ArrayList<AlbumItem>()

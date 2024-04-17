@@ -36,7 +36,7 @@ class UserPostsFragment : Fragment() {
            val listItem = it?.listIterator()
             while (listItem?.hasNext()==true){
                 val item = listItem.next()
-                val result = "Album Title : "+ "${item.title}"+"\n"+
+                val result = "Album Title : "+ item.title +"\n"+
                         "Album Id : "+"${item.id}"+"\n"+
                         "User Id : "+"${item.userId}"+"\n\n\n"
 
