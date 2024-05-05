@@ -81,5 +81,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.5.0")
     implementation ("com.squareup.okhttp3:okhttp:4.9.1")
 
-
+    // Dagger
+    implementation ("com.google.dagger:dagger:2.24")
+    kapt ("com.google.dagger:dagger-compiler:2.24")
 }
