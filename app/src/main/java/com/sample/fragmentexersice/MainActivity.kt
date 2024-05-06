@@ -1,6 +1,5 @@
 package com.sample.fragmentexersice
 
-import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sample.daggerexample.SmartPhone
@@ -27,6 +26,10 @@ class MainActivity : AppCompatActivity() {
 
 //        DaggerSmartPhoneComponent.create().inject(this)
 //        smartPhone.makeACallWithRecording()
+/*
+        Pass parameter to Module Class
+        DaggerSmartPhoneComponent.builder().memoryCardModule(MemoryCardModule("1000"))
+            .build().inject(this)*/
 
         (application as ExerciseApplication).smartPhoneComponent
             .inject(this)
