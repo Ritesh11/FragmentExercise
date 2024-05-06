@@ -5,10 +5,11 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class MemoryCardModule {
+class MemoryCardModule(var availableMemory: String) {
 
     @Provides
     fun providesMemoryCard(): MemoryCard{
+        println("Available memory is $availableMemory KB")
         return MemoryCard()
     }
 }

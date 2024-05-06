@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.sample.daggerexample.SmartPhone
 import com.sample.fragmentexersice.dagger.component.DaggerSmartPhoneComponent
 import com.sample.fragmentexersice.dagger.component.SmartPhoneComponent
+import com.sample.fragmentexersice.dagger.module.MemoryCardModule
 import com.sample.fragmentexersice.databinding.ActivityMainBinding
 import javax.inject.Inject
 
@@ -23,8 +24,14 @@ class MainActivity : AppCompatActivity() {
 //        DaggerSmartPhoneComponent.create().getSmartPhone().makeACallWithRecording()
 
 
-        DaggerSmartPhoneComponent.create().inject(this)
-        smartPhone.makeACallWithRecording()
+//        DaggerSmartPhoneComponent.create().inject(this)
+//        smartPhone.makeACallWithRecording()
+
+        DaggerSmartPhoneComponent.builder().memoryCardModule(MemoryCardModule("1000"))
+            .build().inject(this)
+
+
+
 
     }
 }
